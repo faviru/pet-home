@@ -1,0 +1,79 @@
+:root {
+  --color-back: #E5E5E5;
+  --color-light-xl: #FFF;
+  --color-light-l: #F6F6F6;
+  --color-light-s: #FAFAFA;
+  --color-dark-s: #CDCDCD;
+  --color-dark-m: #B2B2B2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4C4C4C;
+  --color-dark-2xl: #444444;
+  --color-dark-3xl: #292929;
+  --color-primary: #F1CDB3;
+  --color-primary-light: #FDDCC4;
+  --color-grad-s: #5B483A;
+  --color-grad-e: #262425;
+
+}
+
+body {
+  font-family: 'Georgia', Times, serif;
+  color: var(--color-dark-xl);
+  background-color: var(--color-back);
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 130%;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 130%;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 115%;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+}
+
+.paragraph-l {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-s);
+}
+
+.paragraph-s {
+  font-family: 'Arial', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.btn {
+  width: 205px;
+  height: 50px;
+  padding: 14px 44px;
+  font-size: 17px;
+  line-height: 130%;
+  color: var(--color-dark-3xl);
+  font-family: 'Georgia', Times, serif;
+  border: 1px solid var(--color-primary);
+  border-radius: 25px;
+  background-color: var(--color-primary);
+}
+
+.btn:hover {
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+}

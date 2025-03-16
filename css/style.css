@@ -1,0 +1,75 @@
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.start-screen {
+  padding: 0 40px;
+  background-image:
+    url(/img/start-screen-puppy.png),
+    url(/img/noise_transparent.png), radial-gradient(farthest-corner at 0px 0px,
+      var(--color-grad-s) 0%,
+      var(--color-grad-e) 100%);
+  background-repeat: no-repeat, repeat, repeat;
+  background-position: bottom right, center, center;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 30px 0;
+}
+
+.logo__title {
+  font-size: 32px;
+  line-height: 110%;
+  color: var(--color-primary);
+}
+
+.logo__sub-title {
+  margin-top: 10px;
+  margin-left: 4px;
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+  color: var(--color-light-xl);
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu__item {
+  margin-left: 35px;
+}
+
+.menu__item a {
+  display: block;
+  height: 24px;
+}
+
+.menu__item--active a {
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.menu__item:hover a {
+  color: var(--color-light-s);
+  cursor: pointer;
+}
+
+.start-screen__container {
+  height: 568px;
+  padding: 223px 720px 0 0;
+}
+
+.start-screen__title {
+  margin-bottom: 42px;
+  color: var(--color-light-xl);
+}
+
+.start-screen__container p {
+  margin-bottom: 42px;
+}
