@@ -34,16 +34,19 @@ h2 {
 h3 {
   font-size: 35px;
   line-height: 130%;
+  letter-spacing: 0.06em;
 }
 
 h4 {
   font-size: 20px;
   line-height: 115%;
+  letter-spacing: 0.06em;
 }
 
 h5 {
   font-size: 15px;
   line-height: 110%;
+  letter-spacing: 0.06em;
 }
 
 .paragraph-l {
@@ -69,11 +72,25 @@ h5 {
   color: var(--color-dark-3xl);
   font-family: 'Georgia', Times, serif;
   border: 1px solid var(--color-primary);
+  background-color: var(--color-light-s);
   border-radius: 25px;
+}
+
+.btn--round {
+  width: 50px;
+  padding: 14px 14px;
+  line-height: 18px;
+}
+
+.btn--accent {
   background-color: var(--color-primary);
 }
 
 .btn:hover {
   background-color: var(--color-primary-light);
   cursor: pointer;
+}
+
+.wrapper {
+  padding: 80px 40px 100px 40px;
 }
