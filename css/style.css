@@ -4,7 +4,7 @@
 }
 
 .start-screen {
-  padding: 0 40px;
+  padding: 0 var(--desctop-side-padding);
   background-image:
     url(../img/start-screen-puppy.png),
     url(../img/noise_transparent.png), radial-gradient(farthest-corner at 0px 0px,
@@ -54,6 +54,11 @@ header {
 .menu__item a {
   display: block;
   height: 24px;
+  transition: 0.3s ease;
+}
+
+.menu__item--active {
+  pointer-events: none;
 }
 
 .menu__item--active a {
@@ -63,9 +68,11 @@ header {
 .menu__item:hover a {
   color: var(--color-light-s);
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .start-screen__container {
+  margin-top: 90px;
   height: 728px;
 }
 
@@ -73,6 +80,7 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 42px;
   padding-top: 252px;
   height: 322px;
   width: 420px;
@@ -80,12 +88,7 @@ header {
 
 .start-screen__title {
   width: 310px;
-  margin-bottom: 42px;
   color: var(--color-light-xl);
-}
-
-.start-screen__container p {
-  margin-bottom: 42px;
 }
 
 .about {
@@ -134,6 +137,13 @@ header {
   height: 435px;
   border-radius: 9px;
   background-color: var(--color-light-s);
+  transition: 0.3s ease;
+}
+
+.pet-card:hover {
+  background-color: var(--color-light-xl);
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .pets__slider {
@@ -143,7 +153,7 @@ header {
   width: 100%;
 }
 
-.slider__slides {
+.slider__wrapper {
   display: flex;
   align-items: center;
   gap: 90px;
@@ -151,4 +161,126 @@ header {
 
 .pets>.btn {
   width: 259px;
+}
+
+.help {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-light-xl);
+}
+
+.help h3 {
+  text-align: center;
+}
+
+.help__list {
+  display: flex;
+  gap: 55px 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.help__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 113px;
+  justify-content: space-between;
+}
+
+.help__item svg {
+  width: 60px;
+  height: 60px;
+}
+
+.donation {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  background-color: var(--color-light-l);
+}
+
+.donation__content {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 380px;
+  height: 282px;
+}
+
+.credit-card {
+  height: 43px;
+  padding: 10px 15px 10px 60px;
+  border-radius: 9px;
+  color: var(--color-dark-l);
+  background-color: var(--color-primary);
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  background-image: url(../img/credit-card.svg);
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+  background-size: 30px 23px;
+}
+
+.card-agreement {
+  font-style: italic;
+  font-size: 12px;
+  line-height: 150%;
+  color: var(--color-dark-m);
+}
+
+footer {
+  display: flex;
+  gap: 160px;
+  justify-content: space-between;
+  height: 310px;
+  background-image:
+    url(../img/noise_transparent.png), radial-gradient(farthest-corner at 0px 0px,
+      var(--color-grad-s) 0%,
+      var(--color-grad-e) 100%);
+}
+
+footer.wrapper {
+  padding-top: 40px;
+  padding-bottom: 0;
+}
+
+.contacts,
+.location {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contacts {
+  width: 279px;
+}
+
+.location {
+  width: 302px;
+}
+
+.contact__item,
+.location__item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.location__item a {
+  width: 260px;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 32px
+}
+
+.location-icon {
+  width: 20px;
+  height: 32px
 }
