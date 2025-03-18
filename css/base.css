@@ -74,26 +74,40 @@ h5 {
 .btn {
   box-sizing: border-box;
   width: 205px;
-  height: 50px;
+  height: 52px;
   padding: 14px 44px;
   font-size: 17px;
   line-height: 130%;
+  text-align: center;
   color: var(--color-dark-3xl);
   font-family: 'Georgia', Times, serif;
-  border: 1px solid var(--color-primary);
+  border: 2px solid var(--color-primary);
   background-color: var(--color-light-s);
-  border-radius: 25px;
+  border-radius: 30px;
   transition: 0.3s ease;
 }
 
 .btn--round {
-  width: 50px;
-  padding: 14px 14px;
-  line-height: 18px;
+  width: 52px;
+  padding: initial;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+}
+
+.btn--active {
+  background-color: var(--color-primary);
+  pointer-events: none;
 }
 
 .btn--accent {
   background-color: var(--color-primary);
+}
+
+.btn--inactive {
+  border: 2px solid var(--color-dark-s);
+  color: var(--color-dark-s);
+  pointer-events: none;
 }
 
 .btn:hover {
@@ -104,6 +118,11 @@ h5 {
 
 .wrapper {
   padding: 80px var(--desctop-side-padding) 100px var(--desctop-side-padding);
+}
+
+.wrapper--sides {
+  padding-left: var(--desctop-side-padding);
+  padding-right: var(--desctop-side-padding);
 }
 
 footer h3 {
