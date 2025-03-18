@@ -235,7 +235,6 @@ header {
 
 footer {
   display: flex;
-  gap: 160px;
   justify-content: space-between;
   height: 310px;
   background-image:
