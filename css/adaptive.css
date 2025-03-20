@@ -1,0 +1,83 @@
+@media(width < 1280px) {
+  .page-wrapper {
+    /* max-width: var(--tablet-width); */
+  }
+
+  .wrapper--sides {
+    padding-left: var(--tablet-side-padding);
+    padding-right: var(--tablet-side-padding);
+  }
+
+  .wrapper {
+    padding: 80px var(--tablet-side-padding) 100px var(--tablet-side-padding);
+  }
+
+  .start-screen__container {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .start-screen__content {
+    padding-top: 0;
+  }
+
+  .start-screen__btn {
+    align-self: center;
+  }
+
+  .start-screen__img {
+    align-self: end;
+    width: 569px;
+    height: 593px;
+    margin-top: 100px;
+  }
+
+  .about__container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 80px;
+  }
+
+  .pets__slider {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .pets-img {
+    width: 300px;
+    height: 408px;
+  }
+
+  .slider__wrapper {
+    gap: 40px;
+  }
+
+  .slider__slide:nth-child(3) {
+    display: none;
+  }
+
+  .help__list {
+    gap: 60px;
+  }
+
+  .help__item {
+    width: 170px;
+  }
+
+  .donation__container {
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 60px;
+  }
+
+  .donation__img {
+    width: 505px;
+    height: 261px;
+  }
+
+  .footer__container {
+    flex-wrap: wrap;
+    gap: 65px 60px;
+    justify-content: center;
+  }
+}

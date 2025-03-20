@@ -93,7 +93,6 @@ header {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
-  height: 728px;
 }
 
 .start-screen__content {
@@ -287,7 +286,7 @@ footer {
 .footer__container {
   display: flex;
   justify-content: space-between;
-  height: 310px;
+  min-height: 310px;
   padding-top: 40px;
 }
 
@@ -332,7 +331,7 @@ footer {
 .pets__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 30px;
 }
 
