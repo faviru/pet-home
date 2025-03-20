@@ -1,0 +1,138 @@
+:root {
+  --color-back: #E5E5E5;
+  --color-light-xl: #FFF;
+  --color-light-l: #F6F6F6;
+  --color-light-s: #FAFAFA;
+  --color-dark-s: #CDCDCD;
+  --color-dark-m: #B2B2B2;
+  --color-dark-l: #545454;
+  --color-dark-xl: #4C4C4C;
+  --color-dark-2xl: #444444;
+  --color-dark-3xl: #292929;
+  --color-primary: #F1CDB3;
+  --color-primary-light: #FDDCC4;
+  --color-grad-s: #5B483A;
+  --color-grad-e: #262425;
+  --desctop-side-padding: 40px;
+  --desctop-width: 1280px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Georgia', Times, serif;
+  color: var(--color-dark-xl);
+  background-color: var(--color-back);
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 44px;
+  line-height: 130%;
+}
+
+h3 {
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+  font-weight: 400;
+  text-align: center;
+}
+
+h5 {
+  font-size: 15px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-l);
+}
+
+.paragraph-l {
+  font-family: 'Arial', sans-serif;
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--color-dark-s);
+}
+
+.paragraph-s {
+  font-family: 'Arial', sans-serif;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 150%;
+}
+
+.btn {
+  box-sizing: border-box;
+  width: 205px;
+  height: 50px;
+  padding: 14px 42px;
+  font-size: 17px;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.06em;
+  color: var(--color-dark-3xl);
+  font-family: 'Georgia', Times, serif;
+  border: 2px solid var(--color-primary);
+  background-color: var(--color-light-s);
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.btn--round {
+  width: 52px;
+  padding: initial;
+  font-size: 20px;
+  line-height: 115%;
+}
+
+.btn--active {
+  background-color: var(--color-primary);
+  pointer-events: none;
+}
+
+.btn--accent {
+  background-color: var(--color-primary);
+}
+
+.btn--inactive {
+  border: 2px solid var(--color-dark-s);
+  color: var(--color-dark-s);
+  pointer-events: none;
+}
+
+.btn:hover {
+  background-color: var(--color-primary-light);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.wrapper {
+  padding: 80px var(--desctop-side-padding) 100px var(--desctop-side-padding);
+}
+
+.wrapper--sides {
+  padding-left: var(--desctop-side-padding);
+  padding-right: var(--desctop-side-padding);
+}
+
+footer h3 {
+  color: var(--color-light-xl);
+}
+
+footer a {
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+}
