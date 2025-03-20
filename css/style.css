@@ -179,6 +179,11 @@ header {
   transition: 0.3s ease;
 }
 
+.pet-card:hover .pet-card__btn {
+  background: var(--color-primary-light);
+  transition: 0.3s ease;
+}
+
 .pets__slider {
   display: flex;
   align-items: center;
