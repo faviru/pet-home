@@ -14,6 +14,7 @@
   --color-grad-s: #5B483A;
   --color-grad-e: #262425;
   --desctop-side-padding: 40px;
+  --desctop-width: 1280px;
 }
 
 html {
@@ -74,11 +75,12 @@ h5 {
 .btn {
   box-sizing: border-box;
   width: 205px;
-  height: 52px;
-  padding: 14px 44px;
+  height: 50px;
+  padding: 14px 42px;
   font-size: 17px;
   line-height: 130%;
   text-align: center;
+  letter-spacing: 0.06em;
   color: var(--color-dark-3xl);
   font-family: 'Georgia', Times, serif;
   border: 2px solid var(--color-primary);
@@ -92,7 +94,6 @@ h5 {
   padding: initial;
   font-size: 20px;
   line-height: 115%;
-  letter-spacing: 0.06em;
 }
 
 .btn--active {
