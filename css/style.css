@@ -47,7 +47,7 @@ header {
 
 .logo__sub-title {
   margin-left: 4px;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--second-family);
   font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--color-light-xl);
@@ -55,6 +55,11 @@ header {
 
 .page--pets .logo__sub-title {
   color: var(--color-dark-xl)
+}
+
+.burger-checkbox,
+.burger {
+  visibility: hidden;
 }
 
 .menu {
@@ -66,7 +71,6 @@ header {
 
 .menu__item a {
   display: block;
-  height: 24px;
   transition: 0.3s ease;
 }
 
@@ -255,7 +259,6 @@ header {
 }
 
 .credit-card {
-  height: 43px;
   padding: 10px 15px 10px 60px;
   border-radius: 9px;
   color: var(--color-dark-l);

@@ -1,4 +1,6 @@
 :root {
+  --font-family: "Georgia", sans-serif;
+  --second-family: "Arial", sans-serif;
   --color-back: #E5E5E5;
   --color-light-xl: #FFF;
   --color-light-l: #F6F6F6;
@@ -17,6 +19,7 @@
   --desctop-width: 1280px;
   --tablet-width: 768px;
   --tablet-side-padding: 30px;
+  --mobile-side-padding: 10px;
 }
 
 html {
@@ -24,7 +27,7 @@ html {
 }
 
 body {
-  font-family: 'Georgia', Times, serif;
+  font-family: var(--font-family);
   color: var(--color-dark-xl);
   background-color: var(--color-back);
 }
@@ -61,14 +64,14 @@ h5 {
 }
 
 .paragraph-l {
-  font-family: 'Arial', sans-serif;
+  font-family: var(--second-family);
   font-size: 15px;
   line-height: 160%;
   color: var(--color-dark-s);
 }
 
 .paragraph-s {
-  font-family: 'Arial', sans-serif;
+  font-family: var(--second-family);
   font-style: italic;
   font-size: 12px;
   line-height: 150%;
@@ -84,7 +87,7 @@ h5 {
   text-align: center;
   letter-spacing: 0.06em;
   color: var(--color-dark-3xl);
-  font-family: 'Georgia', Times, serif;
+  font-family: var(--font-family);
   border: 2px solid var(--color-primary);
   background-color: var(--color-light-s);
   border-radius: 30px;
