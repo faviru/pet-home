@@ -47,7 +47,7 @@ header {
 
 .logo__sub-title {
   margin-left: 4px;
-  font-family: 'Arial', sans-serif;
+  font-family: var(--second-family);
   font-size: 13px;
   letter-spacing: 0.1em;
   color: var(--color-light-xl);
@@ -55,6 +55,11 @@ header {
 
 .page--pets .logo__sub-title {
   color: var(--color-dark-xl)
+}
+
+.burger-checkbox,
+.burger {
+  visibility: hidden;
 }
 
 .menu {
@@ -66,7 +71,6 @@ header {
 
 .menu__item a {
   display: block;
-  height: 24px;
   transition: 0.3s ease;
 }
 
@@ -93,7 +97,6 @@ header {
   display: flex;
   justify-content: space-between;
   margin-top: 60px;
-  height: 728px;
 }
 
 .start-screen__content {
@@ -256,7 +259,6 @@ header {
 }
 
 .credit-card {
-  height: 43px;
   padding: 10px 15px 10px 60px;
   border-radius: 9px;
   color: var(--color-dark-l);
@@ -287,7 +289,7 @@ footer {
 .footer__container {
   display: flex;
   justify-content: space-between;
-  height: 310px;
+  min-height: 310px;
   padding-top: 40px;
 }
 
@@ -332,7 +334,7 @@ footer {
 .pets__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   gap: 30px;
 }
 
