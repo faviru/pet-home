@@ -171,11 +171,11 @@
   }
 
   .burger::before {
-    top: 0px;
+    top: 0;
   }
 
   .burger::after {
-    bottom: 0px;
+    bottom: 0;
   }
 
   nav {
@@ -336,6 +336,15 @@
 
   .pets__navigation {
     gap: 10px;
+  }
+
+  .page--pets .menu__item a,
+  .page--pets .menu__item--active a {
+    color: var(--color-dark-s)
+  }
+
+  .page--pets .menu__item:hover a {
+    color: var(--color-light-s);
   }
 
   .footer__container {
