@@ -14,6 +14,23 @@
 
 <body>
   <main class="page">
+    <div class="blackout">
+      <div id="petModal">
+        <img id="petModalClose" src="./img/modal_close_button.png" alt="Close">
+        <div class="pet-modal__wrapper">
+          <img class="pet-modal__img" src="" alt="">
+          <div class="pet-modal__content">
+            <h3></h3>
+            <p class="pet-modal__type"></p>
+            <p class="pet-modal__description">Scarlett is a happy, playful girl who will make you laugh and smile. She
+              forms
+              a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single
+              individual too since she likes to hang out and be with her human.</p>
+            <ul class="pet-modal__list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <section class="start-screen">
       <div class="page-wrapper">
@@ -86,23 +103,7 @@
           <div class="pets__slider">
             <button class="slider__arrow slider__arrow--back btn btn--round" type="button">←</button>
             <div class="slider__wrapper">
-
-              <div class="slider__slide pet-card">
-                <img src="./img/pets-katrine.png" alt="Katrine" class="pet-card__img">
-                <h4 class="pet-card__name">Katrine</h4>
-                <button class="pet-card__btn btn" type="button">Learn more</button>
-              </div>
-              <div class="slider__slide pet-card">
-                <img src="./img/pets-jennifer.png" alt="Jennifer" class="pet-card__img">
-                <h4 class="pet-card__name">Jennifer</h4>
-                <button class="pet-card__btn btn" type="button">Learn more</button>
-              </div>
-              <div class="slider__slide pet-card">
-                <img src="./img/pets-woody.png" alt="Woody" class="pet-card__img">
-                <h4 class="pet-card__name">Woody</h4>
-                <button class="pet-card__btn btn" type="button">Learn more</button>
-              </div>
-
+              <div class="slider__list pet-cards"></div>
             </div>
             <button class="slider__arrow slider__arrow--forward btn btn--round" type="button">→</button>
           </div>
@@ -234,5 +235,6 @@
     </footer>
   </main>
 </body>
+<script src="./sctipt.js"></script>
 
 </html>
