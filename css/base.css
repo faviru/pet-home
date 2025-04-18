@@ -15,9 +15,11 @@
   --color-primary-light: #FDDCC4;
   --color-grad-s: #5B483A;
   --color-grad-e: #262425;
+  --color-modal: #000;
   --desctop-side-padding: 40px;
   --desctop-width: 1280px;
   --tablet-width: 768px;
+  --mobile-width: 320px;
   --tablet-side-padding: 30px;
   --mobile-side-padding: 10px;
 }
@@ -123,6 +125,7 @@ h5 {
 }
 
 .wrapper {
+  box-sizing: border-box;
   padding: 80px var(--desctop-side-padding) 100px var(--desctop-side-padding);
 }
 
