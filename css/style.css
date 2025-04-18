@@ -205,6 +205,7 @@ header {
   display: flex;
   align-items: center;
   gap: 90px;
+  transform: translateX(-1080px);
 }
 
 .pets-btn {
@@ -407,7 +408,8 @@ footer {
 .pet-modal__content {
   align-self: flex-start;
   width: 400px;
-  margin: 50px 20px 0 30px;
+  padding: 50px 20px 0 30px;
+  box-sizing: border-box;
 }
 
 .pet-modal__type {
@@ -420,13 +422,13 @@ footer {
 
 .pet-modal__description {
   font-size: 15px;
-  line-height: 110%;
+  line-height: 114%;
   letter-spacing: 0.06em;
   margin: 40px 0;
 }
 
 .pet-modal__list {
-  margin-left: 16px;
+  margin-left: 13px;
   list-style: disc;
 }
 

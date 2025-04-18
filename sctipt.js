@@ -95,17 +95,20 @@ const screenTypeParam = {
   desc: {
     slidesCount: 3,
     paddings: 210,
-    petsOnScreen: 8
+    petsOnScreen: 8,
+    slideSize: 360
   },
   tablet: {
     slidesCount: 2,
     paddings: 128,
-    petsOnScreen: 6
+    petsOnScreen: 6,
+    slideSize: 310
   },
   mobile: {
     slidesCount: 1,
     paddings: 20,
-    petsOnScreen: 3
+    petsOnScreen: 3,
+    slideSize: 310
   }
 };
 
@@ -210,9 +213,18 @@ if (window.location.pathname.includes('/index')) {
   }
 
   // получение рандомного массива объектов заданной величины
-  function getData(rawArr, count) {
+  function getData(rawArr, count, insertionPosition = 'end') {
     let arr = [];
     let arrToCompare = slider.childNodes.length !== 0 ? [...slider.childNodes].map(el => el.id) : [];
+    // если массив для сравнения больше массива, который надо сгенерировать,
+    // то сравнивать не со всем объемом данных, а с частью
+    // с какой частью зависит от того куда мы планируем добавлять данные
+    // в начало или конец
+    if (arrToCompare.length > count) {
+      arrToCompare = insertionPosition === 'end'
+        ? arrToCompare.slice(arrToCompare.length - count)
+        : arrToCompare.slice(0, count);
+    }
 
     while (arr.length < count) {
       const index = getRandomInt(rawArr.length);
@@ -226,10 +238,10 @@ if (window.location.pathname.includes('/index')) {
 
   // функция отрисовки необходимого количества слайдов
   // в зависимости от параметра pos добавляет слайды в начало или в конец слайдера
-  function drawSlider(count, pos = 'forward') {
-    let slidesData = getData(jsonData, count)
+  function drawSlider(count, pos = 'start') {
+    let slidesData = getData(jsonData, count, pos);
 
-    if (pos === 'forward') {
+    if (pos === 'end') {
       slidesData.forEach(el => {
         slider.append(makeSlide(el))
       });
@@ -241,8 +253,11 @@ if (window.location.pathname.includes('/index')) {
   }
 
   // вызов отрисовки слайдов для начального состояния
+  // отрисовываем сразу 3 сета для удобства работы слайдера
   setSliderWidth();
-  drawSlider(slidesCount)
+  for (let i = 0; i < 3; i++) {
+    drawSlider(slidesCount)
+  };
 
   // функция перерисовывающая слайды если размер окна изменился
   function redrawSlider() {
@@ -253,32 +268,45 @@ if (window.location.pathname.includes('/index')) {
         slider.removeChild(slider.firstChild)
       }
       setSliderWidth();
-      drawSlider(screenType.slidesCount)
+      slidesCount = screenType.slidesCount;
+      for (let i = 0; i < 3; i++) {
+        drawSlider(slidesCount)
+      };
     }
   }
 
   // функция добавления слайдов при клике вперед
-  // если слайдов больше чем (необходимое количество * 2) - отрезать "старые" слайды в начале
+  // добавляет новый сет слайдов, отрезает лишний сет и проигрывает анимацию
   function slideForvard() {
-    drawSlider(slidesCount);
-
-    if (slidesCount !== slider.childNodes.length - 1) {
+    drawSlider(slidesCount, 'end');
+    slider.style.transition = '0.9s ease';
+    slider.style.transform = `translateX(-${(screenType.slideSize) * screenType.slidesCount * 2}px)`;
+    setTimeout(() => {
+      slider.style.transition = '';
+      slider.style.transform = `translateX(-${(screenType.slideSize) * screenType.slidesCount}px)`;
       for (let i = 0; i < slidesCount; i++) {
         slider.removeChild(slider.firstChild);
       }
-    }
+    }, 1000)
   }
 
   // функция добавления слайдов при клике назад
   // если слайдов больше чем (необходимое количество * 2) - отрезать "старые" слайды в конце
   function slideBack() {
-    drawSlider(slidesCount, 'backward');
+    slider.style.transition = '0.9s ease';
+    slider.style.transform = `translateX(0)`;
 
-    if (slidesCount !== slider.childNodes.length - 1) {
-      for (let i = slider.childNodes.length - 1; i >= slidesCount; i--) {
-        slider.removeChild(slider.childNodes[slider.childNodes.length - 1]);
+    setTimeout(() => {
+      const slides = slider.childNodes.length;
+      console.log('for i=', slider.childNodes.length - 1, '; i>=', slider.childNodes.length - slidesCount, '; i--')
+      for (let i = slides - 1; i >= slides - slidesCount; i--) {
+        console.log('i ', i)
+        slider.removeChild(slider.childNodes[i]);
       }
-    }
+      drawSlider(slidesCount, 'start');
+      slider.style.transition = '';
+      slider.style.transform = `translateX(-${(screenType.slideSize) * screenType.slidesCount}px)`;
+    }, 1000)
   }
 
   window.addEventListener('resize', redrawSlider);
