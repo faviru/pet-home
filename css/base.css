@@ -94,6 +94,7 @@ h5 {
   background-color: var(--color-light-s);
   border-radius: 30px;
   transition: 0.3s ease;
+  user-select: none;
 }
 
 .btn--round {
