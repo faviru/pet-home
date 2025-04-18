@@ -208,6 +208,10 @@ header {
   transform: translateX(-1080px);
 }
 
+.slider__arrow--inactive {
+  pointer-events: none;
+}
+
 .pets-btn {
   width: 262px;
 }
@@ -348,6 +352,7 @@ footer {
 
 .page--pets .pets {
   gap: 45px;
+  min-height: 100vh;
 }
 
 .pets__navigation {
