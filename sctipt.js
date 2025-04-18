@@ -1,5 +1,5 @@
 // данные о животных
-const jsonData = [
+const rawPetData = [
   {
     "name": "Jennifer",
     "img": "./img/pets-jennifer.png",
@@ -111,6 +111,18 @@ const screenTypeParam = {
     slideSize: 310
   }
 };
+const bodyScrollControls = {
+  scrollBarWidth: window.innerWidth - document.body.clientWidth,
+
+  disable() {
+    document.body.style.marginRight = `${this.scrollBarWidth}px`;
+    document.body.style.overflowY = 'hidden';
+  },
+  enable() {
+    document.body.style.marginRight = null;
+    document.body.style.overflowY = null;
+  },
+};
 
 // элемент затемненного фона под модальное окно и бургер
 const blackout = document.querySelector('.blackout');
@@ -125,14 +137,13 @@ if (window.innerWidth < 768) {
       burger.click()
     }
   }
-
   // затемнение фона если открыли бургер, затемнение, если закрыли
   burger.addEventListener('change', () => {
     if (burger.checked) {
-      document.body.style.overflow = 'hidden';
+      bodyScrollControls.disable()
       document.addEventListener('click', closeNavigation)
     } else {
-      document.body.style.overflow = '';
+      bodyScrollControls.enable()
       document.removeEventListener('click', closeNavigation)
     }
 
@@ -167,7 +178,7 @@ function generateSet(data) {
 let screenType = getScreenType(window.innerWidth);
 
 // слайдер
-if (window.location.pathname.includes('/index')) {
+if (!window.location.pathname.includes('/pets')) {
   // функция отрисовки слайда с животным
   function makeSlide(data) {
     const slide = document.createElement('div');
@@ -239,7 +250,7 @@ if (window.location.pathname.includes('/index')) {
   // функция отрисовки необходимого количества слайдов
   // в зависимости от параметра pos добавляет слайды в начало или в конец слайдера
   function drawSlider(count, pos = 'start') {
-    let slidesData = getData(jsonData, count, pos);
+    let slidesData = getData(rawPetData, count, pos);
 
     if (pos === 'end') {
       slidesData.forEach(el => {
@@ -317,7 +328,7 @@ if (window.location.pathname.includes('/index')) {
 // список животных
 if (window.location.pathname.includes('/pets')) {
   // генерация начального списка животных (48 штук)
-  const dataSet = generateSet(jsonData);
+  const dataSet = generateSet(rawPetData);
   let currentSet = 0;
 
   const petsContainer = document.querySelector('.pets__list');
@@ -497,8 +508,8 @@ function cardsClickHandler(e) {
     blackout.classList.add('blackout--visible');
     petModal.classList.add('pet-modal--visible');
     blackout.style.top = window.scrollY + 'px';
-    document.body.style.overflow = 'hidden';
-    let cardData = jsonData.find((el) => {
+    bodyScrollControls.disable();
+    let cardData = rawPetData.find((el) => {
       return el['name'] === card.id;
     });
 
@@ -512,7 +523,7 @@ function closePetModal(e) {
   if (e.target.id === 'petModalClose' || e.target === blackout) {
     blackout.classList.remove('blackout--visible');
     petModal.classList.remove('pet-modal--visible');
-    document.body.style.overflow = '';
+    bodyScrollControls.enable();
     blackout.removeEventListener('click', closePetModal)
   }
 }
