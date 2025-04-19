@@ -9,16 +9,44 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/base.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/adaptive.css">
 </head>
 
 <body>
   <main class="page page--pets">
+    <div class="blackout">
+      <div id="petModal">
+        <svg id="petModalClose" width="52" height="52" viewBox="0 0 52 52" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="1" width="50" height="50" rx="25" stroke="#F1CDB3" stroke-width="2" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M27.4262 26L31.7046 21.7216C32.0985 21.3277 32.0985 20.6892 31.7046 20.2954C31.3108 19.9016 30.6723 19.9016 30.2785 20.2954L26 24.5739L21.7215 20.2954C21.3276 19.9015 20.6892 19.9015 20.2953 20.2954C19.9016 20.6892 19.9016 21.3277 20.2953 21.7215L24.5738 26L20.2953 30.2785C19.9016 30.6723 19.9016 31.3108 20.2953 31.7046C20.6892 32.0985 21.3276 32.0985 21.7215 31.7046L26 27.4261L30.2785 31.7046C30.6723 32.0985 31.3108 32.0985 31.7046 31.7046C32.0985 31.3108 32.0985 30.6723 31.7046 30.2785L27.4262 26Z"
+            fill="#292929" />
+        </svg>
+        <div class="pet-modal__wrapper">
+          <img class="pet-modal__img" src="" alt="">
+          <div class="pet-modal__content">
+            <h3></h3>
+            <p class="pet-modal__type"></p>
+            <p class="pet-modal__description">Scarlett is a happy, playful girl who will make you laugh and smile. She
+              forms
+              a bond quickly and will make a loyal companion and a wonderful family dog or a good companion for a single
+              individual too since she likes to hang out and be with her human.</p>
+            <ul class="pet-modal__list"> </ul>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="page-wrapper">
       <header class="wrapper--sides">
         <div class="logo">
           <a href="./index.html" class="logo__title">Cozy House</a>
           <h1 class="logo__sub-title">Shelter for pets in Boston</h1>
         </div>
+        <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
+        <label for="burger-checkbox" class="burger">
+          <span class="burger-line"></span>
+        </label>
         <nav>
           <ul class="menu">
             <li class="menu__item">
@@ -42,54 +70,13 @@
       <div class="page-wrapper">
         <div class="pets__container wrapper">
           <h3>Our friends who<br>are looking for a house</h3>
-          <div class="pets__list">
-            <div class="pet-card">
-              <img src="./img/pets-katrine.png" alt="Katrine" class="pet-card__img">
-              <h4 class="pet-card__name">Katrine</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-jennifer.png" alt="Jennifer" class="pet-card__img">
-              <h4 class="pet-card__name">Jennifer</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-woody.png" alt="Woody" class="pet-card__img">
-              <h4 class="pet-card__name">Woody</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-sophia.png" alt="Sophia" class="pet-card__img">
-              <h4 class="pet-card__name">Sophia</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-timmy.png" alt="Timmy" class="pet-card__img">
-              <h4 class="pet-card__name">Timmy</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-charly.png" alt="Charly" class="pet-card__img">
-              <h4 class="pet-card__name">Charly</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-scarlett.png" alt="Scarlett" class="pet-card__img">
-              <h4 class="pet-card__name">Scarlett</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-            <div class="pet-card">
-              <img src="./img/pets-freddie.png" alt="Freddie" class="pet-card__img">
-              <h4 class="pet-card__name">Freddie</h4>
-              <button class="pet-card__btn btn" type="button">Learn more</button>
-            </div>
-          </div>
+          <div class="pets__list pet-cards"></div>
           <div class="pets__navigation">
-            <button class="btn btn--round btn--inactive" type="button">&lt;&lt;</button>
-            <button class="btn btn--round btn--inactive" type="button">&lt;</button>
-            <button class="btn btn--round btn--active" type="button">1</button>
-            <button class="btn btn--round" type="button">&gt;</button>
-            <button class="btn btn--round" type="button">&gt;&gt;</button>
+            <button class="btn btn--round btn--inactive" data-type="start" type="button">&lt;&lt;</button>
+            <button class="btn btn--round btn--inactive" data-type="back" type="button">&lt;</button>
+            <button class="btn btn--round btn--active" data-type="current" type="button">1</button>
+            <button class="btn btn--round" data-type="forward" type="button">&gt;</button>
+            <button class="btn btn--round" data-type="end" type="button">&gt;&gt;</button>
           </div>
         </div>
       </div>
@@ -136,5 +123,6 @@
     </footer>
   </main>
 </body>
+<script type="module" src="./sctipt.js"></script>
 
 </html>
