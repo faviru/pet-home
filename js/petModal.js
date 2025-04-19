@@ -1,19 +1,8 @@
+import { bodyScrollControls } from "./utils.js";
+
 export default function createPetModal(rawPetData) {
   // элемент затемненного фона под модальное окно и бургер
   const blackout = document.querySelector('.blackout');
-
-  const bodyScrollControls = {
-    scrollBarWidth: window.innerWidth - document.body.clientWidth,
-
-    disable() {
-      document.body.style.marginRight = `${this.scrollBarWidth}px`;
-      document.body.style.overflowY = 'hidden';
-    },
-    enable() {
-      document.body.style.marginRight = null;
-      document.body.style.overflowY = null;
-    },
-  };
 
   // модальное окно при клике по карточке животного
   const petModal = document.getElementById('petModal');

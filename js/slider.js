@@ -1,13 +1,8 @@
-import { getRandomInt } from "./utils.js";
+import { getRandomInt, getScreenType } from "./utils.js";
 
 export default function createSlider(rawPetData, screenTypeParam) {
 
-  // функция определения настроек для окна, в соответствии с размером
-  function getScreenType(windowWidth) {
-    return windowWidth >= 1280 ? screenTypeParam.desc : windowWidth < 768 ? screenTypeParam.mobile : screenTypeParam.tablet;
-  }
-
-  let screenType = getScreenType(window.innerWidth);
+  let screenType = getScreenType(window.innerWidth, screenTypeParam);
   // функция отрисовки слайда с животным
   function makeSlide(data) {
     const slide = document.createElement('div');
@@ -96,7 +91,7 @@ export default function createSlider(rawPetData, screenTypeParam) {
 
   // функция перерисовывающая слайды если размер окна изменился
   function redrawSlider() {
-    let newScreenType = getScreenType(window.innerWidth);
+    let newScreenType = getScreenType(window.innerWidth, screenTypeParam);
     if (screenType != newScreenType) {
       screenType = newScreenType;
       while (slider.firstChild) {

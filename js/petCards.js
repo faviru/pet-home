@@ -1,23 +1,18 @@
-import { shuffle } from "./utils.js";
+import { shuffle, getScreenType } from "./utils.js";
 
 export default function createPetCards(rawPetData, screenTypeParam) {
 
-  // функция определения настроек для окна, в соответствии с размером
-  function getScreenType(windowWidth) {
-    return windowWidth >= 1280 ? screenTypeParam.desc : windowWidth < 768 ? screenTypeParam.mobile : screenTypeParam.tablet;
-  }
-
-  let screenType = getScreenType(window.innerWidth);
+  let screenType = getScreenType(window.innerWidth, screenTypeParam);
 
   // функция генерации набора данных для списка животных
   function generateSet(data) {
     let array = [];
-    const shuffledArr = shuffle(data);
     for (let i = 0; i < 6; i++) {
-      array.push(...shuffledArr);
+      array.push(...shuffle(data));
     }
     return array;
   }
+
   // генерация начального списка животных (48 штук)
   const dataSet = generateSet(rawPetData);
   let currentSet = 0;
@@ -76,7 +71,7 @@ export default function createPetCards(rawPetData, screenTypeParam) {
 
   //функция перерисовки карточек при смене размера окна
   function redrawCards() {
-    let newScreenType = getScreenType(window.innerWidth);
+    let newScreenType = getScreenType(window.innerWidth, screenTypeParam);
     if (screenType != newScreenType) {
       screenType = newScreenType;
       clearList();
