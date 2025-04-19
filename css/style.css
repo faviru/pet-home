@@ -406,6 +406,10 @@ footer {
   cursor: pointer;
 }
 
+#petModalClose:hover>rect {
+  fill: var(--color-primary)
+}
+
 .pet-modal__img {
   width: 500px;
 }

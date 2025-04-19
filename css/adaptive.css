@@ -295,7 +295,7 @@
   .slider__list {
     margin: 0;
     width: 100%;
-    transform: translateX(-270px);
+    transform: translateX(-310px);
   }
 
   .slider__slide {

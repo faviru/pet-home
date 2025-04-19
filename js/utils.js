@@ -11,3 +11,20 @@ export function shuffle(array) {
 export function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
+
+export const bodyScrollControls = {
+  scrollBarWidth: window.innerWidth - document.body.clientWidth,
+
+  disable() {
+    document.body.style.marginRight = `${this.scrollBarWidth}px`;
+    document.body.style.overflowY = 'hidden';
+  },
+  enable() {
+    document.body.style.marginRight = null;
+    document.body.style.overflowY = null;
+  },
+};
+// функция определения настроек для окна, в соответствии с размером
+export function getScreenType(windowWidth, screenTypeParam) {
+  return windowWidth >= 1280 ? screenTypeParam.desc : windowWidth < 768 ? screenTypeParam.mobile : screenTypeParam.tablet;
+}

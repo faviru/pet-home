@@ -2,6 +2,7 @@ import { rawPetData } from "./js/rawPetData.js";
 import createSlider from "./js/slider.js";
 import createPetCards from "./js/petCards.js";
 import createPetModal from "./js/petModal.js";
+import { bodyScrollControls } from "./js/utils.js";
 
 // параметры в соответствии с размером окна
 const screenTypeParam = {
